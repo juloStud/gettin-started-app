@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install modules
-        run: npm Install
+        run: npm install
 
       - name: Launch test
         run: npm test
