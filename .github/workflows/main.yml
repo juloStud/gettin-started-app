@@ -12,8 +12,22 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
+      - name: Install modules
+        run: npm Install
+
+      - name: Launch test
+        run: npm test
+
+  build:
+    name: Build
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
