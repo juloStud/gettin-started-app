@@ -4,6 +4,13 @@ on:
   push:
     branches: [ main ]
 
+  workflow_run:
+    workflows: ['build']
+    types:
+      - completed
+
+  workflow_dispatch:
+
 jobs:
   build:
 
